@@ -1,0 +1,4 @@
+Trees need to be obtained from https://doi.org/10.1038/s41588-019-0484-x, split by superpopulation, and converted to tskit format
+
+Then DoLoReS is run for each chromosome and population separately using (e.g. for chr2 and EUR superpopulation)
+python -m run-dolores -C chr2 -n 1000GP_Phase3_mask_prene_chr2_EUR -t trees_location/ -s HomSap -G HapMapII_GRCh37 -c 1.0 -m 0.0 -M 1 -u 1

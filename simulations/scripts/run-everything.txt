@@ -1,0 +1,83 @@
+
+
+#=========================================================================================================================================================
+# Flat recombination map simulation edge spans
+#=========================================================================================================================================================
+
+# ARGweaver
+python -m run-edgespans -C chr0 -n argweaver_smc_prime_10 -t simulations/data/flat-recombination-map -s HomSap -b 10000 -g dummy_map2.txt -T argweaver
+
+# Simulated trees with different models
+python -m run-edgespans -C chr0 -n simulated_data_smc_100 -t simulations/data/flat-recombination-map -s HomSap -b 10000 -g dummy_map2.txt -T smcprime
+python -m run-edgespans -C chr0 -n simulated_data_hudson_100 -t simulations/data/flat-recombination-map -s HomSap -b 10000 -g dummy_map2.txt -T cwr
+python -m run-edgespans -C chr0 -n simulated_data_smc_prime_100 -t simulations/data/flat-recombination-map -s HomSap -b 10000 -g dummy_map2.txt -T smcprime
+
+
+#=========================================================================================================================================================
+# Chr21 simulation edge spans
+#=========================================================================================================================================================
+
+# Simulated trees
+python -m run-edgespans -C chr21 -n simulated_data_smc_prime_10 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T smcprime
+python -m run-edgespans -C chr21 -n simulated_data_smc_prime_100 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T smcprime
+python -m run-edgespans -C chr21 -n simulated_data_smc_prime_1000 -t simulations/data/chr21-recombination-map -s HomSap -b 1000 -G HapMapII_GRCh38 -T smcprime
+python -m run-edgespans -C chr21 -n simulated_data_hudson_100 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T cwr
+python -m run-edgespans -C chr21 -n simulated_data_smc_100 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T smcprime
+
+# Relate trees
+python -m run-edgespans -C chr21 -n relate_smc_prime_10 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T relate -m 1.29e-8
+python -m run-edgespans -C chr21 -n relate_smc_prime_100 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T relate -m 1.29e-8
+python -m run-edgespans -C chr21 -n relate_smc_prime_1000 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T relate -m 1.29e-8
+
+# ARG-Needle trees
+python -m run-edgespans -C chr21 -n argneedle_smc_prime_10 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T argneedle
+python -m run-edgespans -C chr21 -n argneedle_smc_prime_100 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T argneedle
+python -m run-edgespans -C chr21 -n argneedle_smc_prime_1000 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T argneedle
+
+# tsinfer+tsdate trees
+python -m run-edgespans -C chr21 -n tsdate_smc_prime_10 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T tsdate
+python -m run-edgespans -C chr21 -n tsdate_smc_prime_100 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T tsdate
+python -m run-edgespans -C chr21 -n tsdate_smc_prime_1000 -t simulations/data/chr21-recombination-map -s HomSap -b 10000 -G HapMapII_GRCh38 -T tsdate
+
+
+#=========================================================================================================================================================
+# Chr21 simulation clade spans
+#=========================================================================================================================================================
+
+# Simulated trees
+python -m run-dolores -C chr21 -n simulated_data_smc_prime_100 -t simulations/data/chr21-recombination-map/ -s HomSap -G HapMapII_GRCh38 -c 0 -m 0 -M 0 -u 0 -o
+
+# Relate trees
+# With correction
+python -m run-dolores -C chr21 -n relate_smc_prime_100 -t simulations/data/chr21-recombination-map/ -s HomSap -G HapMapII_GRCh38 -c 0.01 -m 0.05 -M 1 -u 0 -o
+# Without correction
+python -m run-dolores -C chr21 -n relate_smc_prime_100 -t simulations/data/chr21-recombination-map/ -s HomSap -G HapMapII_GRCh38 -c 0 -m 0 -M 0 -u 0 -o
+
+# tsinfer+tsdate
+python -m run-dolores -C chr21 -n tsdate_smc_prime_100 -t simulations/data/chr21-recombination-map/ -s HomSap -G HapMapII_GRCh38 -c 0 -m 0 -M 0 -u 0 -o
+
+# ARG-Needle
+python -m run-dolores -C chr21 -n argneedle_smc_prime_100 -t simulations/data/chr21-recombination-map/ -s HomSap -G HapMapII_GRCh38 -c 0 -m 0 -M 0 -u 0 -o
+
+#=========================================================================================================================================================
+# SLiM simulation clade spans
+#=========================================================================================================================================================
+
+# Simulated trees, with inversion
+python -m run-dolores -C chr0 -n slim_inv_100_recap -t simulations/data/slim/ -s HomSap -g dummy_map1.txt -c 0 -m 0 -M 0 -u 0 -o
+# SLiM, simulated, without inversion
+python -m run-dolores -C chr0 -n slim_noinv_100_recap -t simulations/data/slim/ -s HomSap -g dummy_map1.txt -c 0 -m 0 -M 0 -u 0 -o
+
+# Relate trees, with inversion
+# With correction
+python -m run-dolores -C chr0 -n slim_inv_100_relate -t simulations/data/slim/ -s HomSap -g dummy_map1.txt -c 0.01 -m 0.05 -M 1 -u 0 -o
+# Without correction
+python -m run-dolores -C chr0 -n slim_inv_100_relate -t simulations/data/slim/ -s HomSap -g dummy_map1.txt -c 0 -m 0 -M 0 -u 0 -o
+
+# Relate trees, without inversion
+# With correction
+python -m run-dolores -C chr0 -n slim_noinv_10_relate -t simulations/data/slim/ -s HomSap -g dummy_map1.txt -c 0.01 -m 0.05 -M 1 -u 0 -o
+python -m run-dolores -C chr0 -n slim_noinv_100_relate -t simulations/data/slim/ -s HomSap -g dummy_map1.txt -c 0.01 -m 0.05 -M 1 -u 0 -o
+python -m run-dolores -C chr0 -n slim_noinv_1000_relate -t simulations/data/slim/ -s HomSap -g dummy_map1.txt -c 0.01 -m 0.05 -M 1 -u 0 -o
+# Without correction
+python -m run-dolores -C chr0 -n slim_noinv_100_relate -t simulations/data/slim/ -s HomSap -g dummy_map1.txt -c 0 -m 0 -M 0 -u 0 -o
