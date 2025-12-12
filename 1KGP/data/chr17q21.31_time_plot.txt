@@ -1,0 +1,10 @@
+POP Super-population corresponding to clade
+IN_SPAN Whether the clade (in each tree = row) is in the span of the chr17 inversion
+R2 R^2 between this clade and the predicted set of chr17 inversions carriers
+CLADESIZE Number of samples (haploid) in clade
+AF_EUR Allele frequency in EUR
+START Genomic position of tree start
+END Genomic position of tree end
+TIME_LOW Time at lower endpoint of branch subtending this clade
+TIME_HIGH Time at upper endpoint of branch subtending this clade
+SNP SNPs on the branch subtending this clade
