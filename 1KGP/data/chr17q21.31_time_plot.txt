@@ -8,3 +8,4 @@ END Genomic position of tree end
 TIME_LOW Time at lower endpoint of branch subtending this clade
 TIME_HIGH Time at upper endpoint of branch subtending this clade
 SNP SNPs on the branch subtending this clade
+MRCA MRCA time for each tree
